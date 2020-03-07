@@ -152,7 +152,7 @@ function loadMainPage(){
 	let body = document.querySelector("#pageBody");
 	body.innerHTML = `
 		<header>
-			<h1> Daves' Notorious Sphero App</h1>
+			<h1> Daves Notorious Sphero App</h1>
 		</header>
 		<div id="connectContainer">
 			<p id="connectInstruction">` + appDict[language].connectInstruction + `</p>
@@ -171,7 +171,7 @@ function loadMainPage(){
 function loadLanguageChoice(){
 	document.querySelector("#pageBody").innerHTML = `
 		<header>
-			<h1> Daves' Notorious Sphero App</h1>
+			<h1> Daves Notorious Sphero App</h1>
 		</header>
 		<div id="flags">
 			<p> Choose your language </p>
