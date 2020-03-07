@@ -66,11 +66,7 @@ function loadConnectedPage(){
 	document.querySelector('#geo').addEventListener('click', function(event){
 		let b = document.querySelector('#geo');
 		if (watchId){
-            // *DLE* 
-            //bolt.roll(0, bolt.heading, []);
-            let speed = Number(document.querySelector('input[type=range]').value);
-            bolt.roll(speed, bolt.heading, []);
-
+            bolt.roll(0, bolt.heading, []);
 			navigator.geolocation.clearWatch(watchId);
 			watchId = null;
 			geo.innerHTML = appDict[language].geoloc
@@ -152,7 +148,7 @@ function loadMainPage(){
 	let body = document.querySelector("#pageBody");
 	body.innerHTML = `
 		<header>
-			<h1> Daves Notorious Sphero App</h1>
+			<h1> Notorious Sphero App v1</h1>
 		</header>
 		<div id="connectContainer">
 			<p id="connectInstruction">` + appDict[language].connectInstruction + `</p>
@@ -171,7 +167,7 @@ function loadMainPage(){
 function loadLanguageChoice(){
 	document.querySelector("#pageBody").innerHTML = `
 		<header>
-			<h1> Daves Notorious Sphero App</h1>
+			<h1> Notorious Sphero App v1</h1>
 		</header>
 		<div id="flags">
 			<p> Choose your language </p>
