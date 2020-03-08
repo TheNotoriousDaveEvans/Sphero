@@ -48,7 +48,9 @@ function moveSphero(position) {
   		console.log(speed,heading);
   		let spheroSpeed =  SPHERO_MAX_SPEED * speed / 2.0; //2.0 mps is the maximum speed of Sphero Bolt
   		spheroSpeed < SPHERO_MAX_SPEED ? spheroSpeed = Math.round(speed) : spheroSpeed = SPHERO_MAX_SPEED; 
- 		bolt.roll(spheroSpeed, heading, []);	
+
+        // *DLE* bolt.roll(spheroSpeed, heading, []);	
+        bolt.roll(255, heading, []);	
 	}
 	else {
 		bolt.roll(0, bolt.heading, []);
