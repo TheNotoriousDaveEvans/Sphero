@@ -39,6 +39,8 @@ function loadConnectedPage(){
 			</div>
 			<div id="color-picker-container"></div><br>
 		</div>
+        <div id="message-window" width="100%" style="border:solid">
+        </div>
 		`;		
 	document.querySelector('#disconnect').addEventListener('click', () => { 
 		bolt.disconnect();

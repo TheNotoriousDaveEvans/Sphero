@@ -34,7 +34,12 @@ function errorLocation(err){
 /* Asks Sphero to roll depending the latitude and longitude of the device */
 function moveSphero(position) {
 	let speed = position.coords.speed;
-	let heading = position.coords.heading;
+    let heading = position.coords.heading;
+
+    // *DLE*
+    let b = document.querySelector('#message-window');
+    b.innerHTML = "speed: " + speed + "<br/>"
+        + "heading: " + heading + "<br/>";
 
     // *DLE* if (speed > 0.2 && heading) 
     if (speed > 0.02 && heading) 
