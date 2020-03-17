@@ -42,6 +42,7 @@ function loadConnectedPage(){
         <div id="message-window" width="100%" style="border:solid">
         </div>
 		`;		
+    // <button class="control-button rest-test">Test REST</button>
 	document.querySelector('#disconnect').addEventListener('click', () => { 
 		bolt.disconnect();
 		// annyang.abort();
@@ -88,7 +89,12 @@ function loadConnectedPage(){
 		}
 		else if (e.target.classList.contains('heading-left')){
 			bolt.setHeading((bolt.heading-45)%360);			
-		}
+        }
+        // *DLE*
+        else if (e.target.classList.contains('rest-test')) {
+            //restlog.rest_get("hello world");
+            $.ajax({ url: "http://localhost:808/Log/Get?key=Sphero&data=WTF%0D%0A" });
+        }
 	});
 
 	colorPicker = new iro.ColorPicker('#color-picker-container');
@@ -155,6 +161,7 @@ function loadMainPage(){
 		<div id="connectContainer">
 			<p id="connectInstruction">` + appDict[language].connectInstruction + `</p>
 			<button id= "connectButton">` + appDict[language].connection + `</button>
+			<button id= "test">Test Rest</button>
 		</div>
         `;
 	if (navigator.bluetooth){
@@ -163,7 +170,15 @@ function loadMainPage(){
 	else{
 		document.querySelector('#connectInstruction').innerHTML = appDict[language].errorBLE;
 		document.querySelector('#connectButton').disabled = true;
-	}
+    }
+
+    // *DLE*
+    document.querySelector('#test').addEventListener('click', testRest);
+}
+
+function testRest() {
+
+    $.ajax({ url: "http://localhost:808/Log/Get?key=Sphero&data=WTF%0D%0A" });
 }
 
 function loadLanguageChoice(){
@@ -185,7 +200,9 @@ function loadLanguageChoice(){
 	document.querySelector("#gb").addEventListener('click', () => {
 		language = 'EN';
 		loadMainPage();
-	})
+    })
+
+    //restlog = new RestLog();
 }
 
 //if(annyang){
@@ -202,6 +219,10 @@ function loadLanguageChoice(){
 var bolt = null;
 var colorPicker = null;
 var language = null;
+
+// *DLE*
+var restlog = null;
+
 loadLanguageChoice();
 
 

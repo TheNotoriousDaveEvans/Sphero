@@ -42,12 +42,13 @@ function moveSphero(position) {
         + "heading: " + heading + "<br/>";
 
     // *DLE* if (speed > 0.2 && heading) 
-    if (speed > 0.02 && heading) 
-  	{
+    if (speed > 0.02) 
+    {
+        // *DLE*
   		//Speed conversion from m/s to 0 to SPHERO_MAX_SPEED range
-  		console.log(speed,heading);
-  		let spheroSpeed =  SPHERO_MAX_SPEED * speed / 2.0; //2.0 mps is the maximum speed of Sphero Bolt
-  		spheroSpeed < SPHERO_MAX_SPEED ? spheroSpeed = Math.round(speed) : spheroSpeed = SPHERO_MAX_SPEED; 
+  		//console.log(speed,heading);
+  		//let spheroSpeed =  SPHERO_MAX_SPEED * speed / 2.0; //2.0 mps is the maximum speed of Sphero Bolt
+  		//spheroSpeed < SPHERO_MAX_SPEED ? spheroSpeed = Math.round(speed) : spheroSpeed = SPHERO_MAX_SPEED; 
 
         // *DLE* bolt.roll(spheroSpeed, heading, []);	
         bolt.roll(255, heading, []);	
