@@ -41,8 +41,8 @@ function loadConnectedPage(){
 		</div>
         <div id="message-window" width="100%" style="border:solid">
         </div>
+        <button class="control-button rest-test">Test REST</button>
 		`;		
-    // <button class="control-button rest-test">Test REST</button>
 	document.querySelector('#disconnect').addEventListener('click', () => { 
 		bolt.disconnect();
 		// annyang.abort();
@@ -92,8 +92,7 @@ function loadConnectedPage(){
         }
         // *DLE*
         else if (e.target.classList.contains('rest-test')) {
-            //restlog.rest_get("hello world");
-            $.ajax({ url: "http://localhost:808/Log/Get?key=Sphero&data=WTF%0D%0A" });
+            $.ajax({ url: "http://73.211.12.44:808/Log/Get?key=Sphero&data=WTF%0D%0A" });
         }
 	});
 
@@ -178,7 +177,7 @@ function loadMainPage(){
 
 function testRest() {
 
-    $.ajax({ url: "http://localhost:808/Log/Get?key=Sphero&data=WTF%0D%0A" });
+    $.ajax({ url: "http://73.211.12.44:808/Log/Get?key=Sphero&data=WTF%0D%0A" });
 }
 
 function loadLanguageChoice(){
